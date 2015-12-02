@@ -120,10 +120,19 @@ namespace datagen
 			return _Random.Next(min, max).ToString();
 		}
 
-		//public string date(string min, string max)
-		//{
-		//	throw new NotImplementedException();
-		//}
+		/// <summary>
+		/// Returns date in a range between the dates (specified as a string)
+		/// </summary>
+		/// <param name="min">minimum date (as a string)</param>
+		/// <param name="max">maximum date (as a string)</param>
+		/// <returns>DateTime</returns>
+		public DateTime date(string min = null, string max = null)
+		{
+			DateTime? mindate = min != null ? DateTime.Parse(min) : (DateTime?)null;
+			DateTime? maxdate = max != null ? DateTime.Parse(max) : (DateTime?)null;
+			
+			return date(mindate, maxdate);
+		}
 
 		/// <summary>
 		/// Returns date between the range specified by min and max
