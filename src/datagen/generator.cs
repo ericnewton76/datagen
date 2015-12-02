@@ -32,6 +32,12 @@ namespace datagen
 			return random(lastnames);
 		}
 
+		private int _index;
+		public int index()
+		{
+			return _index++;
+		}
+
 		public string random(params string[] items)
 		{
 			if(items == null || items.Length == 0) return "";
