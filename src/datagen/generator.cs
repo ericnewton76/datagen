@@ -88,6 +88,11 @@ namespace datagen
 		{
 			return _Random.Next(min, max);
 		}
+		public int integer(int max)
+		{
+			return integer(0, max);
+		}
+
 	}
 
 }
