@@ -32,9 +32,10 @@ namespace datagen
 			return random(lastnames);
 		}
 
-		private int _index;
+		private int _index = -1;
 		public int index()
 		{
+			System.Threading.Interlocked.Add(ref _index, 1);
 			return _index++;
 		}
 
