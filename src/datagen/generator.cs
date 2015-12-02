@@ -81,6 +81,16 @@ namespace datagen
 			return Guid.NewGuid();
 		}
 
+		private int _guidIndex;
+		private string _sequentialGuidMask = Guid.NewGuid().ToString("d").Substring(8);
+		public Guid sequentialGuid()
+		{
+			byte[] bytes=BitConverter.GetBytes(_guidIndex++);
+			string first = BitConverter.ToString(bytes).Replace("-", "").PadLeft(8, '0');
+			string seqguidStr = first + _sequentialGuidMask;
+			return Guid.Parse(seqguidStr);
+			//rewrite this junk, too much "extra" classes generated per call.
+		}
 
 		/// <summary>
 		/// Returns a random string from the given array of strings
