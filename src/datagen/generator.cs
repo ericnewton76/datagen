@@ -76,18 +76,34 @@ namespace datagen
 			return _index++;
 		}
 
+
+		/// <summary>
+		/// Returns a random string from the given array of strings
+		/// </summary>
+		/// <param name="items"></param>
+		/// <returns></returns>
 		public string random(params string[] items)
 		{
 			if(items == null || items.Length == 0) return "";
 			int randomIndex = _Random.Next(items.Length);
 			return items[randomIndex];
 		}
+		/// <summary>
+		/// Returns a random integer from the given array of integers
+		/// </summary>
+		/// <param name="items"></param>
+		/// <returns></returns>
 		public int random(params int[] items)
 		{
 			if(items == null || items.Length == 0) return default(int);
 			int randomIndex = _Random.Next(items.Length);
 			return items[randomIndex];
 		}
+		/// <summary>
+		/// Returns a random item T from the given array of items T
+		/// </summary>
+		/// <param name="items">an array of items of <typeparam name="T" /></param>
+		/// <returns>a randomly selected item <typeparam name="T" /></returns>
 		public T random<T>(params T[] items) 
 		{
 			if(items == null || items.Length == 0) return default(T);
@@ -109,6 +125,12 @@ namespace datagen
 		//	throw new NotImplementedException();
 		//}
 
+		/// <summary>
+		/// Returns date between the range specified by min and max
+		/// </summary>
+		/// <param name="min">minimum of the range</param>
+		/// <param name="max">maximum of the range</param>
+		/// <returns>DateTime</returns>
 		public DateTime date(DateTime? min = null, DateTime? max = null)
 		{
 			if(min == null) min = new DateTime(1970, 1, 1);
@@ -121,10 +143,21 @@ namespace datagen
 			return min.Value.AddDays(randomDaysFromMin);
 		}
 
+		/// <summary>
+		/// Returns an integer between the range specified by min and max
+		/// </summary>
+		/// <param name="min">minimum of the range</param>
+		/// <param name="max">maximum of the range</param>
+		/// <returns>integer</returns>
 		public int integer(int min, int max)
 		{
 			return _Random.Next(min, max);
 		}
+		/// <summary>
+		/// Returns an integer between 0 and max.
+		/// </summary>
+		/// <param name="max">maximum of the range</param>
+		/// <returns>integer</returns>
 		public int integer(int max)
 		{
 			return integer(0, max);
