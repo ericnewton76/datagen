@@ -76,6 +76,11 @@ namespace datagen
 			return _index++;
 		}
 
+		public Guid guid()
+		{
+			return Guid.NewGuid();
+		}
+
 
 		/// <summary>
 		/// Returns a random string from the given array of strings
