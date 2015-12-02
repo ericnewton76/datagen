@@ -1,6 +1,6 @@
-# data-seeder
+# datagen
 
-C# library for easily generating sample/seed data with minimal effort.
+datagen is a C# library for easily generating sample/seed data with minimal effort.
 Designed for use with Entity Framework Seed method, but can be utilized for any seed/sample data generation needs.
 
 ## Usage
@@ -8,7 +8,7 @@ Designed for use with Entity Framework Seed method, but can be utilized for any 
 ```c#
 public void CreatePersons()
 {
-  var gen = new data_seeder.generator(0); //use a specific number to have optionally have repeatable results
+  var gen = new datagen.generator(0); //use a specific number to have optionally have repeatable results
 
   for(int i=0; i < 1000; i++)
   {
