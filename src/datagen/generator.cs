@@ -42,7 +42,20 @@ namespace datagen
 		public string random(params string[] items)
 		{
 			if(items == null || items.Length == 0) return "";
-			return items[_Random.Next(items.Length - 1)];
+			int randomIndex = _Random.Next(items.Length);
+			return items[randomIndex];
+		}
+		public int random(params int[] items)
+		{
+			if(items == null || items.Length == 0) return default(int);
+			int randomIndex = _Random.Next(items.Length);
+			return items[randomIndex];
+		}
+		public T random<T>(params T[] items) 
+		{
+			if(items == null || items.Length == 0) return default(T);
+			int randomIndex = _Random.Next(items.Length);
+			return items[randomIndex];
 		}
 
 		public string random(int max)
