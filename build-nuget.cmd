@@ -1,3 +1,6 @@
+REM On AppVeyor, This build script must be run "AFTER BUILD" and BEFORE TESTS because AppVeyor's artifacts gathering happens right then.
+REM The Nuget deployment relies on ARTIFACTS not files within the build tree.
+
 @ECHO OFF
 setlocal
 
@@ -22,8 +25,8 @@ shift
 :SKIP_BUILD
 
 REM Create Nuget Package
-echo %NUGET_EXE% pack datagen.nuspec -version %BUILD_VERSION%
-%NUGET_EXE% pack datagen.nuspec -version %BUILD_VERSION%
+echo %NUGET_EXE% pack %APPYVEYOR_PROJECT_NAME%.nuspec -version %BUILD_VERSION%
+%NUGET_EXE% pack %APPYVEYOR_PROJECT_NAME%.nuspec -version %BUILD_VERSION%
 
 REM if not "%1" == "--no-deploy" %NUGET_EXE% push
 shift
