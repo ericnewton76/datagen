@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "datagen", "datagen\datagen.csproj", "{AF3AB99F-C894-4BAD-8EFA-43981C1BE37B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "datagen.Tests", "datagen.Tests\datagen.Tests.csproj", "{E8A8EE81-1C22-4ED2-AB0D-5D2A25408E05}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B42D44D6-7B42-46FA-A083-61B2FA1969E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +19,15 @@ Global
 		{AF3AB99F-C894-4BAD-8EFA-43981C1BE37B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF3AB99F-C894-4BAD-8EFA-43981C1BE37B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF3AB99F-C894-4BAD-8EFA-43981C1BE37B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8A8EE81-1C22-4ED2-AB0D-5D2A25408E05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8A8EE81-1C22-4ED2-AB0D-5D2A25408E05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8A8EE81-1C22-4ED2-AB0D-5D2A25408E05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8A8EE81-1C22-4ED2-AB0D-5D2A25408E05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E8A8EE81-1C22-4ED2-AB0D-5D2A25408E05} = {B42D44D6-7B42-46FA-A083-61B2FA1969E5}
 	EndGlobalSection
 EndGlobal
