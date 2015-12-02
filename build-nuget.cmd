@@ -6,6 +6,7 @@ setlocal
 
 REM initialization
 set NUGET_EXE=nuget.exe 
+set PROJECT_NAME=%APPVEYOR_PROJECT_NAME%
 
 REM appveyor
 if not "%APPVEYOR_BUILD_VERSION%" == "" set BUILD_VERSION=%APPVEYOR_BUILD_VERSION%
@@ -25,8 +26,8 @@ shift
 :SKIP_BUILD
 
 REM Create Nuget Package
-echo %NUGET_EXE% pack %APPYVEYOR_PROJECT_NAME%.nuspec -version %BUILD_VERSION%
-%NUGET_EXE% pack %APPYVEYOR_PROJECT_NAME%.nuspec -version %BUILD_VERSION%
+echo %NUGET_EXE% pack %PROJECT_NAME%.nuspec -version %BUILD_VERSION%
+%NUGET_EXE% pack %PROJECT_NAME%.nuspec -version %BUILD_VERSION%
 
 REM if not "%1" == "--no-deploy" %NUGET_EXE% push
 shift
