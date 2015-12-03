@@ -10,11 +10,11 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>datagen generates data for seed and sample purposes.</description>
         <copyright>Copyright 2015</copyright>
-        <tags>data uri</tags>
+        <tags>data generator seed sample</tags>
     </metadata>
     <files>
         <file src="src\datagen\bin\Release\datagen.dll" target="lib\net\datagen.dll" />
         <file src="src\datagen\bin\Release\datagen.pdb" target="lib\net\datagen.pdb" />
-        <!--<file src="src\datagen\bin\Release\datagen.xml" target="lib\net\datagen.xml" />-->
+        <file src="src\datagen\bin\Release\datagen.xml" target="lib\net\datagen.xml" />
     </files>
 </package>

@@ -26,8 +26,9 @@ shift
 :SKIP_BUILD
 
 REM Create Nuget Package
-echo %NUGET_EXE% pack %PROJECT_NAME%.nuspec -version %BUILD_VERSION%
+@ECHO ON
 %NUGET_EXE% pack %PROJECT_NAME%.nuspec -version %BUILD_VERSION%
+@ECHO OFF
 
 REM if not "%1" == "--no-deploy" %NUGET_EXE% push
 shift
