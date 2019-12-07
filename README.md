@@ -8,22 +8,28 @@ Designed for use with Entity Framework Seed method, but can be utilized for any 
 ```c#
 public void CreatePersons()
 {
-  var gen = new datagen.generator(0); //use a specific number to have optionally have repeatable results
+  //initialize with a specific random seed to enable repeatable results
+  var gen = new datagen.generator(0); 
 
-  for(int i=0; i < 1000; i++)
+  for(int i=0; i < 100; i++)
   {
     var newperson = new DataModels.Person()
     {
-      FirstName = gen.firstname(),
-      LastName = gen.lastname(),
-      Gender = gen.random("M","F")
-      Age = gen.integer(10,100)
+      FirstName = gen.firstname(),  //generates random firstname
+      LastName = gen.lastname(),    //generates random lastname
+      Gender = gen.random("M","F"), //notice list of available options
+      Age = gen.integer(10,100),    //generates an integer between 10 and 100
+      Email = gen.email(),          //generates a random email
+      City = gen.city(),            //generates a fictious or real city name
+      State = gen.state(),          //generates a state or region, pass "US" for US states
+      Company = gen.companyname(),  //generates a fictious company name
+      Biography = gen.loremipsum(paragraphs:5) //generates lorem ipsum text, 5 paragraphs of 4 sentences with about 20 words each.
     };
     
-    context.Person.Add(newperson);
+    mydbcontext.Person.Add(newperson);
   }
   
-  context.SaveChanges();
+  mydbcontext.SaveChanges();
 }
 ```
 
