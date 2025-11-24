@@ -3,6 +3,8 @@
 datagen is a C# library for easily generating sample/seed data with minimal effort.
 Designed for use with Entity Framework Seed method, but can be utilized for any seed/sample data generation needs.
 
+The goal is to be able to generate random seed data but its generally repeatable, so for example, a dev database gets seeded with the same "Customers" as your staging and testing db.
+
 ## Usage
 
 ```c#
